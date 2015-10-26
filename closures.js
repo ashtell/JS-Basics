@@ -3,14 +3,14 @@
 var outer = function(){
   var name = 'Tyler';
   return function(){
-    return 'The original name was ' + name;
-  }
-}
+    alert('The original name was ' + name);
+  };
+};
 //Above you're given a function that returns another function which has a closure over the name variable.
 //Invoke outer saving the return value into another variable called 'inner'.
-
+var inner = outer();
   //Code Here
-
+inner();
 //Once you do that, invoke inner.
 
   //Code Here
@@ -24,7 +24,7 @@ var outer = function(){
 var callFriend = function(){
   var friend = 'Jake';
   function callF(number){
-    return 'Calling ' + friend + ' at ' + number;
+    alert('Calling ' + friend + ' at ' + number);
   }
   return callF;
 };
@@ -33,8 +33,9 @@ var callFriend = function(){
 //Do what you need to do in order to call your function and get 'Calling Jake at 435-215-9248' in your console.
 
   //Code Here
+var call = callFriend();
 
-
+call("435-215-9248");
 
 //Next Problem
 
@@ -43,13 +44,17 @@ var callFriend = function(){
 /*
   Write a function called makeCounter that makes the following code work properly.
 */
-
+var makeCounter = function(){
+  var counter = 0;
+  counter++;
+  alert(counter);
+};
   //Code Here
   var count = makeCounter();
-  count() // 1
-  count() // 2
-  count() // 3
-  count() // 4
+  count(); // 1
+  count();// 2
+  count(); // 3
+  count(); // 4
 
 
 
@@ -61,7 +66,9 @@ var callFriend = function(){
   Write a function that accepts another function as it's first argument and returns a new function
   (which invokes the original function that was passed in) that can only ever be executed once.
 */
-
+var firstFunction= function(a){
+  
+};
   //Code Here
 
 
