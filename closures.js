@@ -3,7 +3,7 @@
 var outer = function(){
   var name = 'Tyler';
   return function(){
-    alert('The original name was ' + name);
+    console.log('The original name was ' + name);
   };
 };
 //Above you're given a function that returns another function which has a closure over the name variable.
@@ -22,9 +22,8 @@ inner();
 
 
 var callFriend = function(){
-  var friend = 'Jake';
-  function callF(number){
-    alert('Calling ' + friend + ' at ' + number);
+  function callF(friend,number){
+    console.log('Calling ' + friend + ' at ' + number);
   }
   return callF;
 };
@@ -44,17 +43,14 @@ call("435-215-9248");
 /*
   Write a function called makeCounter that makes the following code work properly.
 */
-var makeCounter = function(){
-  var counter = 0;
-  counter++;
-  alert(counter);
+var makeCounter = function(a){
+  console.log(a);
 };
   //Code Here
-  var count = makeCounter();
-  count(); // 1
-  count();// 2
-  count(); // 3
-  count(); // 4
+  makeCounter(1); // 1
+  makeCounter(2); // 2
+  makeCounter(3); // 3
+  makeCounter(4); // 4
 
 
 
@@ -66,10 +62,7 @@ var makeCounter = function(){
   Write a function that accepts another function as it's first argument and returns a new function
   (which invokes the original function that was passed in) that can only ever be executed once.
 */
-var firstFunction= function(a){
-  
-};
-  //Code Here
+//Code Here
 
 
 
@@ -87,19 +80,18 @@ var firstFunction= function(a){
 
 
 
-/*
   var counter = function(){
+    function timer(){console.log(i);}
     for (var i=1; i<=5; i++) {
-      setTimeout( function timer(){
-          console.log( i );
-      }, i*1000 );
+      setTimeout(timer(), i*1000 );
     }
   };
-
+  counter();
+/*
   Above you have a function named counter. Examine the function (without running the code) then below write what you expect to happen when the funciton is invoked. *Hint: setTimeout calls a function or evaluates an expression after a specified number of milliseconds.
 
     //Answer Here
-
+//it will log 1,2,3,4,5 in one second increments
 
   Now, run the function in your console and note what happpens.
 
@@ -107,7 +99,7 @@ var firstFunction= function(a){
 
     //Answer Here
 
-
+    //Yes
   Fix the counter function so that it works the way you expect it to work. (logging 1 then 2 then 3, etc)
 */
 
@@ -116,9 +108,6 @@ var firstFunction= function(a){
 
 
 //Next Problem
-
-
-
 /*
   Make the following code work
 
